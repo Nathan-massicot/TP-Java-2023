@@ -9,7 +9,8 @@ public class Main {
             System.out.println("1. Exercice 1");
             System.out.println("2. Exercice 2");
             System.out.println("3. Exercice 3");
-            System.out.println("4. Quitter");
+            System.out.println("4. Exercice 4");
+            System.out.println("5. Quitter");
 
             System.out.print("Entrez votre choix : ");
             choix = scanner.nextInt();
@@ -41,13 +42,84 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Vous avez choisi  : Exercice 2.");
-                    // Ajoutez votre code ici
+
+                    // creation premiere date
+                    int j,m,a;
+                    Scanner sc1 = new Scanner(System.in); // Donne un nom autre que "sc" au scanner car "sc" deja utilisé
+                    System.out.print("Saisir le jour :");
+                    j = Integer.parseInt(sc1.nextLine());
+                    System.out.print("Saisir le mois :");
+                    m = Integer.parseInt(sc1.nextLine());
+                    System.out.print("Saisir le annee :");
+                    a = Integer.parseInt(sc1.nextLine());
+
+                    Date d1 = new Date(j,m,a);
+                    d1.afficher();
+
+                    // creation deuxième date
+                    j = Integer.parseInt(sc1.nextLine());
+                    System.out.print("Saisir le mois :");
+                    m = Integer.parseInt(sc1.nextLine());
+                    System.out.print("Saisir le annee :");
+                    a = Integer.parseInt(sc1.nextLine());
+
+                    Date d2 = new Date(j,m,a);
+                    d2.afficher();
+
+                    //comparaison des deux dates
+                    d1.comparerDates(d2);
+
+                    System.out.println("D1 D2 = " + d1.comparerDates(d2));
+                    System.out.println("====END==== ");
+
                     break;
                 case 3:
                     System.out.println("Vous avez choisi  : Exercice 3.");
-                    // Ajoutez votre code ici
+
+                    String marque ;
+                    int vitesseMax;
+
+
+                    Vehicule monVehicule = new Vehicule();
+                    Scanner sc2 = new Scanner(System.in);
+                    // premiere marque et vitesse
+                    System.out.print("Saisir la premiere marque :");
+                    marque = sc2.nextLine();
+                    System.out.print("Saisir la  premiere Vitesse Max :");
+                    vitesseMax = Integer.parseInt(sc2.nextLine());
+
+                    monVehicule.setMarque(marque);
+                    monVehicule.setVitessemaximale(vitesseMax);
+
+                    monVehicule.afficher();
+
+                    monVehicule.demarrer();
+                    monVehicule.eteindre();
+
+                    // deuxieme marque et vitesse
+                    Vehicule tonVehicule = new Vehicule();
+                    System.out.print("Saisir la deuxieme marque :");
+                    marque = sc2.nextLine();
+                    System.out.print("Saisir la  deuxieme Vitesse Max :");
+                    vitesseMax = Integer.parseInt(sc2.nextLine());
+
+                    tonVehicule.setMarque(marque);
+                    tonVehicule.setVitessemaximale(vitesseMax);
+
+                    //
+                    if(tonVehicule.Estdemarer()){
+                        tonVehicule.eteindre();
+                    }
+
+                    tonVehicule.afficher();
+
+                    System.out.println("Nombre ="+ Vehicule.getNombre());
                     break;
                 case 4:
+                    System.out.println("Vous avez choisi  : Exercice 4.");
+
+                    break;
+                case 5:
                     System.out.println("Au revoir !");
                     break;
                 default:
