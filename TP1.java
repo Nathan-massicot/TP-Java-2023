@@ -1,4 +1,11 @@
 //Exercice 1 
+
+//a
+public class Main {
+}
+
+public class Point {
+}
 public class Main {
     public static void main(String[] args) {
         Point p0, p1;
